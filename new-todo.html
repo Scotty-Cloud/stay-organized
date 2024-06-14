@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Todo List</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html">Home</a>
+            <a href="todo.html">To-Do List</a>
+            <a href="new-todo.html">New To-Do</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h3>New To-Do</h3>
+      <article>
+        <form id="formAddToDo">
+          <label for="dropdownUser">User</label>
+          <select id="dropdownUser"></select>
+          <label for="dropdownPriority">Priority</label>
+          <select id="dropdownPrioroity">
+            <option>Select Priority</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </form>
+        <label for="deadline">Deadline</label>
+        <input type="date" id="deadlineInput" name="deadline" />
+        <label for="descriptionInput">description</label>
+        <textarea name="userInput" id="descriptionInput"></textarea>
+        <button type="submit" id="submitBtn"></button>
+      </article>
+    </main>
+    <footer>&copy 2024 Tech-Turtles To-Do List</footer>
+    <script src="scripts/new-todo.js"></script>
+  </body>
+</html>
