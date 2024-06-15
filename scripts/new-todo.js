@@ -2,6 +2,7 @@ const dropdownUsers = document.querySelector("#dropdownUsers");
 const downdownPriority = document.querySelector("#downdownPriority");
 const deadlineInput = document.querySelector("#deadlineInput");
 const descriptionInput = document.querySelector("#descriptionInput");
+const todoForm = document.querySelector("#formAddToDo")
 
 window.onload = () => {
   populateUserDropdown();
@@ -21,3 +22,14 @@ async function populateUserDropdown() {
     console.error("Error loading users:", error);
   }
 }
+
+async function populateCategoriesDropdown() {
+    try {
+      const response = await fetch("http://localhost:8083/api/categories");
+      const data = await response.json();
+      downdownPriority.appendChild(new Option("Select a category"));
+      await Promise.all(data.map(user => downdownPriority.appendChild(new Option(user.name))));
+    } catch (error) {
+        console.error("Error loading users:", error);
+    }
+  }
