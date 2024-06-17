@@ -1,123 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Homepage</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo List Homepage</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <!-- Custom CSS -->
     <style>
-        /* Add your custom CSS here */
-        .hero-image {
-            background-image: url('https://static.vecteezy.com/system/resources/previews/003/513/708/non_2x/home-office-illustrations-desktop-with-laptop-books-coffee-smartphone-graphic-tablet-notepad-pastel-concept-top-view-online-lifestyle-concept-online-education-work-at-home-concept-vector.jpg');
-            background-size: 80%; /* Adjust the size as needed */
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            padding: 20px;
-            animation: slide 10s infinite linear;
-        }
-        .hero-image h1 {
-            font-size: 3rem;
-        }
-        .cta-button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #0056b3;
-        }
-        @keyframes slide {
-            0% {
-                background-position: 0 0;
-            }
-            25% {
-                background-position: 25% 0;
-            }
-            50% {
-                background-position: 50% 0;
-            }
-            75% {
-                background-position: 75% 0;
-            }
-            100% {
-                background-position: 100% 0;
-            }
-        }
+      /* Custom Styles */
+      body {
+        background-image: url("https://t3.ftcdn.net/jpg/06/97/43/12/360_F_697431227_QFJRySZ7rR977TZCp0Bd7MSFF83G0sla.jpg");
+        background-size: cover; /* Cover the entire area */
+        background-repeat: no-repeat;
+        background-position: center;
+        color: #333; /* Dark text for better contrast */
+      }
+      .hero-content {
+        height: 100vh; /* Full viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.7
+        ); /* Semi-transparent white background */
+      }
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      .cta-button {
+        background-color: #cd853f; /* Beige button */
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      .cta-button:hover {
+        background-color: #8b4513; /* Darker beige on hover */
+      }
+      .navbar {
+        background-image: url("data:image/jpeg;base64,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"); /* Tree log texture background */
+        background-size: cover;
+        background-repeat: repeat-x; /* Repeat horizontally */
+        background-color: #8b4513; /* Fallback color for older browsers */
+        border-bottom: 1px solid #6d3e03; /* Darker border for separation */
+      }
+      .navbar-brand {
+        color: #fff; /* White color for navbar brand */
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+      .navbar-nav .nav-link {
+        color: #fff !important; /* White text for navbar links */
+      }
+      .navbar-nav .nav-link:hover {
+        opacity: 0.8; /* Reduce opacity on hover */
+      }
+      .navbar-dark .navbar-toggler {
+        border-color: #fff; /* White color for toggler border */
+      }
+      .navbar-collapse {
+        justify-content: flex-end; /* Align items to the right */
+      }
+      .card {
+        background-color: #fff; /* White background for cards */
+        color: #333; /* Dark text for card content */
+        border: none; /* Remove border */
+        height: 100%; /* Occupy full height of parent */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      footer {
+        background-color: #333; /* Dark background for footer */
+        color: #f5f5dc; /* Light text for footer */
+        padding: 20px 0;
+      }
     </style>
-</head>
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
         <a class="navbar-brand" href="#">My Website</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Pages
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">About</a></li>
-                        <li><a class="dropdown-item" href="#">Services</a></li>
-                        <li><a class="dropdown-item" href="#">Contact</a></li>
-                    </ul>
-                </li>
-            </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Pages
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Todo List</a></li>
+                <li><a class="dropdown-item" href="#">Pricing</a></li>
+                <li><a class="dropdown-item" href="login.html">Login</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-<header class="hero-image">
-    <div class="container">
-       
+    <div class="hero-content">
+      <div class="container">
+        <h1>Welcome to My ToDo List Homepage</h1>
+        <p class="lead">Explore our services and products.</p>
+        <a href="#" class="btn btn-lg btn-outline-dark cta-button"
+          >Get Started</a
+        >
+      </div>
     </div>
-</header>
 
-<section class="container my-5">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card">
-                <img src="https://via.placeholder.com/600x400" class="card-img-top" alt="Card Image">
-                <div class="card-body">
-                    <h5 class="card-title">Card 1</h5>
-                    <p class="card-text">This is the first card.</p>
-                </div>
+    <section class="container my-5">
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/003/513/708/non_2x/home-office-illustrations-desktop-with-laptop-books-coffee-smartphone-graphic-tablet-notepad-pastel-concept-top-view-online-lifestyle-concept-online-education-work-at-home-concept-vector.jpg"
+              class="card-img-top"
+              alt="Card Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">ToDo List</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Repellendus nostrum similique reprehenderit quod vitae, quos
+                quia officia eos dolore ea. Est eos, unde fugiat odit labore
+                culpa aut consectetur minima.
+              </p>
+              <a href="#" class="btn btn-lg btn-outline-dark cta-button"
+                >Read More</a
+              >
             </div>
+          </div>
         </div>
-        <div class="col-md-6">
-            <div class="card">
-                <img src="https://via.placeholder.com/600x400" class="card-img-top" alt="Card Image">
-                <div class="card-body">
-                    <h5 class="card-title">Card 2</h5>
-                    <p class="card-text">This is the second card.</p>
-                </div>
+        <div class="col-md-6 mb-4">
+          <div class="card">
+            <img
+              src="https://cdn.thewirecutter.com/wp-content/media/2023/10/notebooks-2048px-7906.jpg?auto=webp&quality=75&crop=1.91:1&width=1200"
+              class="card-img-top"
+              alt="Card Image"
+            />
+            <div class="card-body">
+              <h5 class="card-title">ToDo List</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
+                delectus, ad, nostrum necessitatibus rerum exercitationem totam
+                porro enim asperiores tempora animi, assumenda debitis officia
+                id eveniet libero expedita voluptatem! Odio!
+              </p>
+              <a
+                href="new-todo.html"
+                class="btn btn-lg btn-outline-dark cta-button"
+                >Read More</a
+              >
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<footer class="bg-dark text-white py-4">
-    <div class="container text-center">
+    <section class="container my-5">
+      <h2 class="text-center mb-4">Our Plans</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Free Plan</h5>
+              <h1 class="card-title pricing-card-title">
+                $0<small class="text-body-secondary fw-light">/mo</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>10 users included</li>
+                <li>2 GB of storage</li>
+                <li>Email support</li>
+                <li>Help center access</li>
+              </ul>
+              <button
+                type="button"
+                class="btn btn-lg btn-outline-dark cta-button"
+              >
+                Sign up for free
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Pro Plan</h5>
+              <h1 class="card-title pricing-card-title">
+                $15<small class="text-body-secondary fw-light">/mo</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>20 users included</li>
+                <li>10 GB of storage</li>
+                <li>Priority email support</li>
+                <li>Help center access</li>
+              </ul>
+              <button
+                type="button"
+                class="btn btn-lg btn-outline-dark cta-button"
+              >
+                Get Strated
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-primary">
+            <div class="card-body">
+              <h5 class="card-title">Enterprise Plan</h5>
+              <h1 class="card-title pricing-card-title">
+                $29<small class="text-body-secondary fw-light">/mo</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>30 users included</li>
+                <li>15 GB of storage</li>
+                <li>Phone and email support</li>
+                <li>Help center access</li>
+              </ul>
+              <button
+                type="button"
+                class="btn btn-lg btn-outline-dark cta-button"
+              >
+                Get Started
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-dark text-white py-4">
+      <div class="container text-center">
         <p>&copy; 2024 My Bootstrap Homepage. All Rights Reserved.</p>
-    </div>
-</footer>
-
-<!-- Bootstrap JavaScript (optional, only if needed for certain components) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+      </div>
+    </footer>
+  </body>
 </html>
