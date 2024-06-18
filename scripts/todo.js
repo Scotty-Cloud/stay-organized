@@ -61,6 +61,21 @@ async function fetchTodo() {
       let card = document.createElement("div");
       card.className = "card";
 
+      let EditAnchor = document.createElement("a");
+      EditAnchor.href = `edit.html?id=${todos.id}`;
+      EditAnchor.style.display = "inline-block";
+      EditAnchor.style.padding = "5px 10px";
+      EditAnchor.style.fontSize = "12px";
+      EditAnchor.style.backgroundColor = "#333";
+      EditAnchor.style.color = "white";
+      EditAnchor.style.borderRadius = "5px";
+      EditAnchor.style.marginRight = "10px"; 
+      EditAnchor.style.textDecoration = "none";
+      EditAnchor.style.border = "none";
+      EditAnchor.style.cursor = "pointer";
+      EditAnchor.textContent = "Edit";
+      card.appendChild(EditAnchor);
+
       let deleteAnchor = document.createElement("a");
       deleteAnchor.href = `delete.html?id=${todos.id}`;
       deleteAnchor.style.display = "inline-block";
@@ -69,7 +84,7 @@ async function fetchTodo() {
       deleteAnchor.style.backgroundColor = "#333";
       deleteAnchor.style.color = "white";
       deleteAnchor.style.borderRadius = "5px";
-      deleteAnchor.style.marginRight = "10px"; // Add right margin to space out the buttons
+      deleteAnchor.style.marginRight = "10px"; 
       deleteAnchor.style.textDecoration = "none";
       deleteAnchor.style.border = "none";
       deleteAnchor.style.cursor = "pointer";

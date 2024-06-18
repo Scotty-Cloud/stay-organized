@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Agenda</title>
+    <link rel="stylesheet" href="css/edit.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@100..900&family=Playwrite+DE+Grund:wght@100..400&display=swap");
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>Edit Agenda</h1>
+        <form id="editAgendaForm">
+          <label for="Category">Category</label>
+          <select id="category">
+            <option>Select</option>
+            <option value="Errands">Errands</option>
+            <option value="Household Task">Household Task</option>
+            <option value="Financial Task">Financial Task</option>
+            <option value="Personal Task">Personal Task</option>
+            <option value="Work Task">Work Task</option>
+          </select>
+          <label for="deadline">Deadline</label>
+          <input type="date" id="deadline" required />
+          <label for="priority">Priority</label>
+          <select id="priority">
+            <option>Select</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+          <label for="completed">Completed</label>
+          <select id="completed">
+            <option>Select</option>
+            <option value="yes">Yes</option>
+            <option value="No">No</option>
+            <option value="wip">In Progress</option>
+          </select>
+          <label for="description">Description</label>
+          <input type="text" id="description" required />
+          <button
+            type="button"
+            class="btn btn-primary-custom"
+            onclick="editAgendaData()"
+          >
+            Save
+          </button>
+        </form>
+      </article>
+    </main>
+    <script src="scripts/edit.js"></script>
+  </body>
+</html>
