@@ -106,7 +106,9 @@ footer {
 } */
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Playwrite DE Grund", cursive;
+  font-size: 12.5px;
+  font-style: normal;
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
@@ -134,29 +136,31 @@ nav {
 }
 
 nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
-  
-  nav li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  nav a:hover {
-    color: #ccc;
-  }
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ccc;
+}
+
 main {
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
+  background-color: #a7988b;
   padding: 2rem;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

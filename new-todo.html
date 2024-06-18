@@ -4,15 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Todo List</title>
-    <link rel="stylesheet" href="css/new-todo.css">
+    <link rel="stylesheet" href="css/new-todo.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@100..900&family=Playwrite+DE+Grund:wght@100..400&display=swap");
+    </style>
+  </head>
   <body>
     <header>
       <nav>
         <nav>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="todo.html">To-Do List</a></li>
-            <li><a href="new-todo.html">New To-Do</a></li>
+            <li><a href="todo.html">Agenda List</a></li>
+            <li><a href="new-todo.html">New Agenda</a></li>
           </ul>
         </nav>
       </nav>
@@ -21,12 +25,10 @@
       <h3>New To-Do</h3>
       <article>
         <form id="formAddToDo">
-          <label for="dropdownUsers">User Name:</label>
+          <label for="dropdownUsers" >User Name:</label>
           <select id="dropdownUsers"></select>
-
           <label for="dropdownCategories">Category Names:</label>
           <select id="dropdownCategories"></select>
-
           <label for="dropdownPriority">Urgency</label>
           <select id="dropdownPriority">
             <option>Select</option>
@@ -34,18 +36,15 @@
             <option value="Medium">Medium</option>
             <option value="High">High</option>
           </select>
-
           <label for="inputDeadline">Deadline:</label>
           <input type="date" id="inputDeadline" name="deadline" />
-
           <label for="inputDescription">Input:</label>
           <textarea id="inputDescription" name="userInput"></textarea>
-
           <button type="submit" id="submitButton">Submit</button>
         </form>
       </article>
     </main>
-    <footer>&copy 2024 Tech-Turtles To-Do List</footer>
+    <footer>&copy 2024 Tech-Turtles Agenda</footer>
     <script src="scripts/new-todo.js"></script>
   </body>
 </html>
