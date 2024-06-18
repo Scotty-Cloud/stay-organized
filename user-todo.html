@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Users Agenda</title>
+    <link rel="stylesheet" href="css/user-todo.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@100..900&family=Playwrite+DE+Grund:wght@100..400&display=swap");
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="user-todo.html">User Agenda</a></li>
+            <li><a href="new-todo.html">New Agenda</a></li>
+            <li><a href="all-todo.html">Agenda List</a></li>
+          </ul>
+        </nav>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <form>
+          <h3>ToDo</h3>
+          <label for="users">Users</label>
+          <!-- Dropdown of Users -->
+          <select id="dropdownUsers"></select>
+          <!-- Display users' todos -->
+          <div id="displayTodos"></div>
+        </form>
+      </article>
+    </main>
+    <footer>&copy 2024 Tech-Turtles Agenda</footer>
+    <script src="scripts/user-todo.js"></script>
+  </body>
+</html>
