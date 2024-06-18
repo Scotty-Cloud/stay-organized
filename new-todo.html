@@ -8,7 +8,19 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@100..900&family=Playwrite+DE+Grund:wght@100..400&display=swap");
     </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css"
+    />
   </head>
+  <style>
+    footer {
+      display: flex;
+      justify-content: center;
+      margin-top: auto;
+      padding: 10px; /* add some padding for better looks */
+    }
+  </style>
   <body>
     <header>
       <nav>
@@ -29,6 +41,11 @@
           <select id="dropdownUsers"></select>
           <label for="dropdownCategories">Category Names:</label>
           <select id="dropdownCategories"></select>
+          <label for="dropdownUsers">User Name:</label>
+          <select id="dropdownUsers"></select>
+
+          <label for="dropdownCategories">Category Names:</label>
+          <select id="dropdownCategories"></select>
           <label for="dropdownPriority">Urgency</label>
           <select id="dropdownPriority">
             <option>Select</option>
@@ -36,6 +53,10 @@
             <option value="Medium">Medium</option>
             <option value="High">High</option>
           </select>
+          <label for="inputDeadline">Deadline:</label>
+          <input type="date" id="inputDeadline" name="deadline" />
+          <label for="inputDescription">Input:</label>
+          <textarea id="inputDescription" name="userInput"></textarea>
           <label for="inputDeadline">Deadline:</label>
           <input type="date" id="inputDeadline" name="deadline" />
           <label for="inputDescription">Input:</label>
