@@ -1,39 +1,38 @@
-async function fetchTodo(){
-    try{
-        let response = await fetch("http://localhost:8083/api/todos");
-        let todoList = await response.json();
-        let container = document.querySelector("#todoDisplayContainer")
+async function fetchTodo() {
+  try {
+    let response = await fetch("http://localhost:8083/api/todos");
+    let todoList = await response.json();
+    let container = document.querySelector("#todoDisplayContainer");
 
-        for(let todos of todoList) {
-            let card = document.createElement("div")
-            card.className = ("card");
+    for (let todos of todoList) {
+      let card = document.createElement("div");
+      card.className = "card";
 
-            let category = document.createElement("h3");
-            category.innerText = `Category: ${todos.category}`
-            card.appendChild(category);
+      let category = document.createElement("h3");
+      category.innerText = `Category: ${todos.category}`;
+      card.appendChild(category);
 
-            let deadline = document.createElement("h4");
-            deadline.innerText = `Due: ${todos.deadline}`
-            card.appendChild(deadline);
+      let deadline = document.createElement("h4");
+      deadline.innerText = `Due: ${todos.deadline}`;
+      card.appendChild(deadline);
 
-            let priority = document.createElement("h4");
-            priority.innerText = `Priority Level: ${todos.priority}`
-            card.appendChild(priority);
-            
-            let completed = document.createElement("h4");
-            completed.innerText = `Completed: ${todos.completed}`
-            card.appendChild(completed);
-            
-            let description = document.createElement("p");
-            description.innerText = `Description: ${todos.description}`
-            card.appendChild(description);
+      let priority = document.createElement("h4");
+      priority.innerText = `Priority Level: ${todos.priority}`;
+      card.appendChild(priority);
 
+      let completed = document.createElement("h4");
+      completed.innerText = `Completed: ${todos.completed}`;
+      card.appendChild(completed);
 
-            container.appendChild(card);
-        }
-    } catch (error){
-        console.error("Error:",error)
+      let description = document.createElement("p");
+      description.innerText = `Description: ${todos.description}`;
+      card.appendChild(description);
+
+      container.appendChild(card);
     }
+  } catch (error) {
+    console.error("Error:", error);
+  }
 }
 
-fetchTodo()
+fetchTodo();
