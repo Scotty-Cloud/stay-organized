@@ -8,6 +8,20 @@ async function fetchTodo() {
       let card = document.createElement("div");
       card.className = "card";
 
+      let deleteAnchor = document.createElement("a");
+      deleteAnchor.href = `delete.html?id=${todos.id}`;
+      deleteAnchor.style.display = "inline-block"; 
+      deleteAnchor.style.padding = "5px 10px"; 
+      deleteAnchor.style.fontSize = "12px"; 
+      deleteAnchor.style.backgroundColor = "#333"; 
+      deleteAnchor.style.color = "white"; 
+      deleteAnchor.style.borderRadius = "5px"; 
+      deleteAnchor.style.textDecoration = "none"; 
+      deleteAnchor.style.border = "none"; 
+      deleteAnchor.style.cursor = "pointer"; 
+      deleteAnchor.textContent = "Delete"; 
+      card.appendChild(deleteAnchor);
+
       let category = document.createElement("h3");
       category.innerText = `Category: ${todos.category}`;
       card.appendChild(category);
