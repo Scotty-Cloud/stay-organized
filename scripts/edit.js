@@ -46,7 +46,7 @@ async function editAgendaData() {
     });
     let data = await response.json();
     console.log("Agenda updated:", data);
-    window.location.href = "todo.html";
+    window.location.href = "all-todo.html";
   } catch (error) {
     console.error("Error updating user:", error);
   }

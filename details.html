@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agenda Details</title>
+    <link rel="stylesheet" href="css/details.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@100..900&family=Playwrite+DE+Grund:wght@100..400&display=swap");
+
+      #agendaDetailContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .card {
+        background: #a7988b;
+        font-family: "Playwrite DE Grund", cursive;
+        width: 30rem;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .card p {
+        margin-bottom: 10px;
+      }
+
+      .card button {
+        background: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .card button:hover {
+        background: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div id="agendaDetailContainer">
+        <!-- card will be rendered here -->
+      </div>
+    </main>
+    <script src="/scripts/details.js"></script>
+  </body>
+</html>
