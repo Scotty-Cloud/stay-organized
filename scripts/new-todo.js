@@ -16,7 +16,7 @@ async function populateUserDropdown() {
       const data = await response.json();
       dropdownUsers.appendChild(new Option("Select a user"));
       data.forEach(user => {
-          dropdownUsers.appendChild(new Option(user.username, user.id));
+          dropdownUsers.appendChild(new Option(user.name, user.id));
       })
   }
   catch(error){
