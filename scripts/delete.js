@@ -11,6 +11,6 @@ async function deleteTask() {
   } catch (error) {
     console.error("Error deleting task:", error);
   } finally {
-    window.location.href = "todo.html";
+    window.location.href = "all-todo.html";
   }
 }

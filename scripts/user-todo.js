@@ -51,11 +51,12 @@ async function displayUserToDos() {
         doneButton.style.backgroundColor = "#333";
         doneButton.style.color = "white";
         doneButton.style.borderRadius = "5px";
+        doneButton.style.marginRight = "10px";
         doneButton.style.textDecoration = "none";
         doneButton.style.border = "none";
         doneButton.style.cursor = "pointer";
         doneButton.textContent = "Done";
-  
+
         doneButton.addEventListener("click", (e) => {
           if (card.style.textDecoration === "line-through") {
             card.style.textDecoration = "none";
@@ -63,8 +64,22 @@ async function displayUserToDos() {
             card.style.textDecoration = "line-through";
           }
         });
-  
         card.appendChild(doneButton);
+
+        let anchor = document.createElement("a");
+        anchor.href = `details.html?userid=${todo.id}`;
+        anchor.style.display = "inline-block";
+        anchor.style.padding = "5px 10px";
+        anchor.style.fontSize = "12px";
+        anchor.style.backgroundColor = "#333";
+        anchor.style.color = "white";
+        anchor.style.borderRadius = "5px";
+        anchor.style.marginRight = "10px";
+        anchor.style.textDecoration = "none";
+        anchor.style.border = "none";
+        anchor.style.cursor = "pointer";
+        anchor.textContent = "See details";
+        card.appendChild(anchor);
 
         displayTodos.appendChild(card);
       }
