@@ -74,7 +74,8 @@ form {
 }
 
 .card {
-  background-color: #a7988b;
+  /* background-color: #a7988b; */
+  background-color: #cec7c0;
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 10px;
